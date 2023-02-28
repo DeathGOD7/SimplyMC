@@ -25,24 +25,29 @@
       <p id="graylabel1" class="gray" style="padding-bottom: 10px;">Use Google Chrome for the best experience.</p>
       <div class="container-fluid">
         <div class="row">
+          <div class="row">
+            <div id="output">
+              <label id="label4" for="outputText">Output</label>
+              <label id="graylabel2" class="gray" for="outputText" style="font-weight: normal;">Copy-paste this for RGB text!</label>
+              <pre id="outputText" style="border-radius: 10px; white-space: pre-wrap; height: 70px; margin-right: 15px; font-family: MinecraftRegular; margin-bottom: 5px;"></pre>
+              <p id="error">This is more than 256 characters and may not fit in the chat box.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div id="coloredNick" class="minecraft"></div>
+          </div>
           <div class="col-md-2" style="padding-left: 0;">
+            <label for="numOfColors">Number of Colors</label>
+            <input class="form-control"
+                    value="2" id="numOfColors" type="number" min="2" max="10"
+                    onchange="updateOutputText(event); toggleColors(this.value);"
+                    oninput="updateOutputText(event); toggleColors(this.value);"/>
             <div id="hexColors" class="container-fluid">
               <!-- Will be populated in JavaScript -->
             </div>
           </div>
           <div class="col-md-10" style="padding-right: 0;">
             <div class="container-fluid">
-              <div class="row">
-                <div id="output">
-                  <label id="label4" for="outputText">Output</label>
-                  <label id="graylabel2" class="gray" for="outputText" style="font-weight: normal;">Copy-paste this for RGB text!</label>
-                  <pre id="outputText" style="border-radius: 10px; white-space: pre-wrap; height: 70px; margin-right: 15px; font-family: MinecraftRegular; margin-bottom: 5px;"></pre>
-                  <p id="error">This is more than 256 characters and may not fit in the chat box.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div id="coloredNick" class="minecraft"></div>
-              </div>
               <div class="row">
                 <div class="col-md-3" style="padding-left: 0;">
                   <label for="nickname">Message</label>
@@ -79,14 +84,6 @@
                     <option value='1'>Rainbow</option>
                   </select>
                 </div>
-              </div>
-              <div class="row">
-                <label for="numOfColors">Number of Colors</label>
-                <input class="form-control"
-                       style="width: 75px;"
-                       value="2" id="numOfColors" type="number" min="2" max="10"
-                       onchange="updateOutputText(event); toggleColors(this.value);"
-                       oninput="updateOutputText(event); toggleColors(this.value);"/>
               </div>
               <div class="row">
                 <div id="dbold">
